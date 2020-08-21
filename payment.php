@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ .  '/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 if (!$_POST || !$_POST['product_title'] || !$_POST['product_price'] || !$_POST['product_quantity']) {
     header("Location: index.php");
@@ -21,6 +21,11 @@ $item->unit_price = $_POST['product_price'];
 $preference->items = [$item];
 
 $preference->payment_methods = [
+    "excluded_payment_methods" => [
+        [
+            "id" => "amex"
+        ]
+    ],
     "installments" => 6
 ];
 
