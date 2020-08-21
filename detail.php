@@ -509,7 +509,12 @@
                                         <?php echo "$" . $_POST['unit'] ?>
                                     </h3>
                                 </div>
-                                <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                <form method="POST" action="payment.php">
+                                    <input type="hidden" name="product_name" value=<?php echo $_POST['title']; ?>>
+                                    <input type="hidden" name="product_price" value=<?php echo $_POST['price']; ?>>
+                                    <input type="hidden" name="product_quantity" value=<?php echo $_POST['unit']; ?>>
+                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                </form>
                             </div>
                         </div>
                     </div>
