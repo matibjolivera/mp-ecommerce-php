@@ -41,9 +41,9 @@ $preference->payment_methods = [
 ];
 
 $preference->back_urls = [
-    "success" => "{$baseSiteUrl}/success",
-    "failure" => "{$baseSiteUrl}/failure",
-    "pending" => "{$baseSiteUrl}/pending"
+    "success" => "{$baseSiteUrl}/successful_payment.php",
+    "failure" => "{$baseSiteUrl}/failed_payment.php",
+    "pending" => "{$baseSiteUrl}/pending_payment.php"
 ];
 $preference->auto_return = "approved";
 

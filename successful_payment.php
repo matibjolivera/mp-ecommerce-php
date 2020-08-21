@@ -5,10 +5,9 @@ require __DIR__ . '/vendor/autoload.php';
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-$log = new Logger('payment_notification');
+$log = new Logger('successful_payment.php');
 $log->pushHandler(new StreamHandler('php://stderr', Logger::INFO));
 
-$post = file_get_contents('php://input');
-$log->info("POST: " . $post);
+$log->info("GET: " . json_encode($_GET));
 
-http_response_code(200);
+echo json_encode($_GET);
