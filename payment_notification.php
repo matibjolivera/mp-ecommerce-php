@@ -1,3 +1,3 @@
 <?php
 
-var_dump($_POST);die();
+echo file_get_contents('php://input');die();
