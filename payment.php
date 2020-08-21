@@ -22,6 +22,7 @@ $item->quantity = 1;
 $item->unit_price = $_POST['product_price'];
 
 $preference->external_reference = "matibjolivera@gmail.com";
+$preference->notification_url = "{$baseSiteUrl}/payment_notification.php";
 
 $preference->items = [$item];
 
