@@ -2,7 +2,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-if (!$_POST || !$_POST['product_title'] || !$_POST['product_price'] || !$_POST['product_quantity']) {
+if (!$_POST || !$_POST['product_title'] || !$_POST['product_price'] || !$_POST['product_image']) {
     header("Location: index.php");
 }
 
@@ -14,9 +14,13 @@ MercadoPago\SDK::setAccessToken('TEST-8948539626952155-061321-a29ce4bf0c00578dba
 $preference = new MercadoPago\Preference();
 
 $item = new MercadoPago\Item();
+$item->id = 1234;
+$item->description = "Dispositivo móvil de Tienda e-commerce";
+$item->picture_url = __DIR__ . "{$_POST['product_image']}";
 $item->title = $_POST['product_title'];
-$item->quantity = $_POST['product_quantity'];
+$item->quantity = 1;
 $item->unit_price = $_POST['product_price'];
+$item->external_reference = "matibjolivera@gmail.com";
 
 $preference->items = [$item];
 
