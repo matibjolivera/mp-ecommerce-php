@@ -19,3 +19,5 @@ $item->quantity = $_POST['product_quantity'];
 $item->unit_price = $_POST['product_price'];
 $preference->items = [$item];
 $preference->save();
+
+header("Location {$preference['sandbox_init_point']}");
