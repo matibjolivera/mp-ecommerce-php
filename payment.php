@@ -20,4 +20,4 @@ $item->unit_price = $_POST['product_price'];
 $preference->items = [$item];
 $preference->save();
 
-header("Location {$preference['sandbox_init_point']}");
+header("Location {$preference->sandbox_init_point}");
