@@ -10,12 +10,14 @@ if (!$_POST || !$_POST['product_title'] || !$_POST['product_price'] || !$_POST['
  */
 MercadoPago\SDK::setAccessToken('TEST-8948539626952155-061321-a29ce4bf0c00578dba394ef90d91c230-261498730');
 
+$baseSiteUrl = "https://{$_SERVER["HTTP_HOST"]}";
+
 $preference = new MercadoPago\Preference();
 
 $item = new MercadoPago\Item();
 $item->id = 1234;
 $item->description = "Dispositivo móvil de Tienda e-commerce";
-$item->picture_url = "https://{$_SERVER["HTTP_HOST"]}/{$_POST['product_image']}";
+$item->picture_url = "{$baseSiteUrl}/{$_POST['product_image']}";
 $item->title = $_POST['product_title'];
 $item->quantity = 1;
 $item->unit_price = $_POST['product_price'];
@@ -36,6 +38,13 @@ $preference->payment_methods = [
     ],
     "installments" => 6
 ];
+
+$preference->back_urls = [
+    "success" => "{$baseSiteUrl}/success",
+    "failure" => "{$baseSiteUrl}/failure",
+    "pending" => "{$baseSiteUrl}/pending"
+];
+$preference->auto_return = "approved";
 
 $preference->save();
 
