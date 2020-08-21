@@ -510,9 +510,9 @@
                                     </h3>
                                 </div>
                                 <form method="POST" action="payment.php">
-                                    <input type="hidden" name="product_title" value=<?php echo $_POST['title']; ?>>
+                                    <input type="hidden" name="product_title" value="<?php echo $_POST['title']; ?>">
                                     <input type="hidden" name="product_price" value=<?php echo $_POST['price']; ?>>
-                                    <input type="hidden" name="product_image" value=<?php echo $_POST['img']; ?>>
+                                    <input type="hidden" name="product_image" value="<?php echo $_POST['img']; ?>">
                                     <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
                                 </form>
                             </div>
