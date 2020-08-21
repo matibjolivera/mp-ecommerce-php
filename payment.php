@@ -5,7 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 if (!$_POST || !$_POST['product_title'] || !$_POST['product_price'] || !$_POST['product_image']) {
     header("Location: index.php");
 }
-dump($_POST);die();
+var_dump($_POST);die();
 /**
  * Sandbox token
  */
