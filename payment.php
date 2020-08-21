@@ -5,7 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 if (!$_POST || !$_POST['product_title'] || !$_POST['product_price'] || !$_POST['product_image']) {
     header("Location: index.php");
 }
-
+dump($_POST);die();
 /**
  * Sandbox token
  */
@@ -16,7 +16,7 @@ $preference = new MercadoPago\Preference();
 $item = new MercadoPago\Item();
 $item->id = 1234;
 $item->description = "Dispositivo móvil de Tienda e-commerce";
-$item->picture_url = __DIR__ . "{$_POST['product_image']}";
+$item->picture_url = "https://matibjolivera-mp-commerce-php.herokuapp.com/assets/samsung-galaxy-s9-xxl.jpg";
 $item->title = $_POST['product_title'];
 $item->quantity = 1;
 $item->unit_price = $_POST['product_price'];
