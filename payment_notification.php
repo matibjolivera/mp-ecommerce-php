@@ -12,6 +12,6 @@ $log->warning("LOG TEST");
 $log->warning(json_encode($_POST));
 $log->warning(json_encode($_GET));
 $log->warning(json_encode($_REQUEST));
-$log->warning(json_encode($_POST["id"]));
+$log->warning(isset($_POST["id"]) ? json_encode($_POST["id"]) : "ID NO SET");
 
 http_response_code(200);
