@@ -17,7 +17,13 @@ $item = new MercadoPago\Item();
 $item->title = $_POST['product_title'];
 $item->quantity = $_POST['product_quantity'];
 $item->unit_price = $_POST['product_price'];
+
 $preference->items = [$item];
+
+$preference->payment_methods = [
+    "installments" => 6
+];
+
 $preference->save();
 
 header("Location: {$preference->sandbox_init_point}");
