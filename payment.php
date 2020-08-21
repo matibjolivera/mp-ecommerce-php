@@ -26,6 +26,11 @@ $preference->payment_methods = [
             "id" => "amex"
         ]
     ],
+    "excluded_payment_types" => [
+        [
+            "id" => "atm"
+        ]
+    ],
     "installments" => 6
 ];
 
