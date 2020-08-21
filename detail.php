@@ -569,5 +569,6 @@
     </svg>
 </div>
 <div id="ac-gn-viewport-emitter"></div>
+<script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
 </body>
 </html>
